@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-config
+  namespace: finance-dashboard
+data:
+  NODE_ENV: "production"
+  DB_PORT: "5432"
+  DB_NAME: "finance"
+  JWT_EXPIRES_IN: "7d"
+  FRONTEND_URL: "http://frontend-service:8080"
+  DEFAULT_ADMIN_USERNAME: "admin"
+  DEFAULT_ADMIN_EMAIL: "admin@localhost"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: frontend-config
+  namespace: finance-dashboard
+data:
+  VITE_API_URL: "/api"
