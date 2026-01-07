@@ -332,7 +332,7 @@ export default function TransactionsPage() {
                       </div>
                     </TableHead>
                     <TableHead>Category</TableHead>
-                    <TableHead>Channel</TableHead>
+                    <TableHead>Notes</TableHead>
                     <TableHead 
                       className="text-right cursor-pointer hover:bg-muted/50"
                       onClick={() => handleSort('total_rp')}
@@ -367,7 +367,7 @@ export default function TransactionsPage() {
                         <TableCell>
                           <Badge variant="outline">{tx.category_name || tx.category_code}</Badge>
                         </TableCell>
-                        <TableCell>{tx.channel}</TableCell>
+                        <TableCell>{tx.notes || '-'}</TableCell>
                         <TableCell className={cn(
                           "text-right font-medium",
                           tx.kind === 'credit' ? 'text-green-500' : 'text-red-500'
